@@ -1,3 +1,5 @@
+from datetime import datetime
+from typing import Optional
 import uuid
 
 from pydantic import EmailStr
@@ -112,3 +114,28 @@ class TokenPayload(SQLModel):
 class NewPassword(SQLModel):
     token: str
     new_password: str = Field(min_length=8, max_length=40)
+
+
+class CategoryBase(SQLModel):
+    name: str = Field(min_length=1, max_length=255)
+    description: str | None = Field(default=None, max_length=255)
+
+
+class Category(CategoryBase, table=True):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
+    created_at: Optional[datetime] = Field(default_factory=datetime.utcnow)
+    updated_at: Optional[datetime] = Field(default_factory=datetime.utcnow)
+    products: list["Product"] = Relationship(back_populates="category")
+
+
+class ProductBase(SQLModel):
+    name: str = Field(min_length=1, max_length=255)
+    description: str | None = Field(default=None, max_length=255)
+    category_id: uuid.UUID = Field(foreign_key="category.id")
+
+
+class Product(ProductBase, table=True):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
+    created_at: Optional[datetime] = Field(default_factory=datetime.utcnow)
+    updated_at: Optional[datetime] = Field(default_factory=datetime.utcnow)
+    category: Optional[Category] = Relationship(back_populates="products")

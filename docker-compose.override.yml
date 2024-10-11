@@ -10,7 +10,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - "80:80"
+      - "8081:8081"
       - "8090:8080"
     # Duplicate the command from docker-compose.yml to add --api.insecure=true
     command:
@@ -75,11 +75,14 @@ services:
           ignore:
             - ./backend/.venv
             - .venv
+            - ./backend/app/alembic
+            - /app/app/alembic
         - path: ./backend/pyproject.toml
           action: rebuild
     # TODO: remove once coverage is done locally
     volumes:
       - ./backend/htmlcov:/app/htmlcov
+      - ./backend/app/alembic:/app/app/alembic
     environment:
       SMTP_HOST: "mailcatcher"
       SMTP_PORT: "1025"
