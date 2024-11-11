@@ -1,0 +1,242 @@
+[
+    {
+        "question": "Build kitchen cabinets",
+        "group": "Realistic"
+    },
+    {
+        "question": "Lay brick or tile",
+        "group": "Realistic"
+    },
+    {
+        "question": "Develop a new medicine",
+        "group": "Investigative"
+    },
+    {
+        "question": "Study ways to reduce water pollution",
+        "group": "Investigative"
+    },
+    {
+        "question": "Write books or plays",
+        "group": "Artistic"
+    },
+    {
+        "question": "Play a musical instrument",
+        "group": "Artistic"
+    },
+    {
+        "question": "Teach an individual an exercise routine",
+        "group": "Social"
+    },
+    {
+        "question": "Help people with personal or emotional problems",
+        "group": "Social"
+    },
+    {
+        "question": "Buy and sell stocks and bonds",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Manage a retail store",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Develop a spreadsheet using computer software",
+        "group": "Conventional"
+    },
+    {
+        "question": "Proofread records or forms",
+        "group": "Conventional"
+    },
+    {
+        "question": "Repair household appliances",
+        "group": "Realistic"
+    },
+    {
+        "question": "Raise fish in a fish hatchery",
+        "group": "Realistic"
+    },
+    {
+        "question": "Conduct chemical experiments",
+        "group": "Investigative"
+    },
+    {
+        "question": "Study the movement of planets",
+        "group": "Investigative"
+    },
+    {
+        "question": "Compose or arrange music",
+        "group": "Artistic"
+    },
+    {
+        "question": "Draw pictures",
+        "group": "Artistic"
+    },
+    {
+        "question": "Give career guidance to people",
+        "group": "Social"
+    },
+    {
+        "question": "Perform rehabilitation therapy",
+        "group": "Social"
+    },
+    {
+        "question": "Operate a beauty salon or barber shop",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Manage a department within a large company",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Install software across computers on a large network",
+        "group": "Conventional"
+    },
+    {
+        "question": "Operate a calculator",
+        "group": "Conventional"
+    },
+    {
+        "question": "Assemble electronic parts",
+        "group": "Realistic"
+    },
+    {
+        "question": "Drive a truck to deliver packages to offices and homes",
+        "group": "Realistic"
+    },
+    {
+        "question": "Examine blood samples using a microscope",
+        "group": "Investigative"
+    },
+    {
+        "question": "Investigate the cause of a fire",
+        "group": "Investigative"
+    },
+    {
+        "question": "Create special effects for movies",
+        "group": "Artistic"
+    },
+    {
+        "question": "Paint sets for plays",
+        "group": "Artistic"
+    },
+    {
+        "question": "Do volunteer work at a non-profit organization",
+        "group": "Social"
+    },
+    {
+        "question": "Teach children how to play sports",
+        "group": "Social"
+    },
+    {
+        "question": "Start your own business",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Negotiate business contracts",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Keep shipping and receiving records",
+        "group": "Conventional"
+    },
+    {
+        "question": "Calculate the wages of employees",
+        "group": "Conventional"
+    },
+    {
+        "question": "Test the quality of parts before shipment",
+        "group": "Realistic"
+    },
+    {
+        "question": "Repair and install locks",
+        "group": "Realistic"
+    },
+    {
+        "question": "Develop a way to better predict the weather",
+        "group": "Investigative"
+    },
+    {
+        "question": "Work in a biology lab",
+        "group": "Investigative"
+    },
+    {
+        "question": "Write scripts for movies or television shows",
+        "group": "Artistic"
+    },
+    {
+        "question": "Perform jazz or tap dance",
+        "group": "Artistic"
+    },
+    {
+        "question": "Teach sign language to people who are deaf or hard of hearing",
+        "group": "Social"
+    },
+    {
+        "question": "Help conduct a group therapy session",
+        "group": "Social"
+    },
+    {
+        "question": "Represent a client in a lawsuit",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Market a new line of clothing",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Inventory supplies using a hand-held computer",
+        "group": "Conventional"
+    },
+    {
+        "question": "Record rent payments",
+        "group": "Conventional"
+    },
+    {
+        "question": "Set up and operate machines to make products",
+        "group": "Realistic"
+    },
+    {
+        "question": "Put out forest fires",
+        "group": "Realistic"
+    },
+    {
+        "question": "Invent a replacement for sugar",
+        "group": "Investigative"
+    },
+    {
+        "question": "Do laboratory tests to identify diseases",
+        "group": "Investigative"
+    },
+    {
+        "question": "Sing in a band",
+        "group": "Artistic"
+    },
+    {
+        "question": "Edit movies",
+        "group": "Artistic"
+    },
+    {
+        "question": "Take care of children at a day-care center",
+        "group": "Social"
+    },
+    {
+        "question": "Teach a high-school class",
+        "group": "Social"
+    },
+    {
+        "question": "Sell merchandise at a department store",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Manage a clothing store",
+        "group": "Enterprising"
+    },
+    {
+        "question": "Keep inventory records",
+        "group": "Conventional"
+    },
+    {
+        "question": "Stamp, sort, and distribute mail for an organization",
+        "group": "Conventional"
+    }
+]
