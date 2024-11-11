@@ -23,6 +23,7 @@ fileConfig(config.config_file_name)
 from app.model.entity import EntityBase
 from app.model.category import Category
 from app.model.product import Product
+from app.model.student import Student
 from app.models import SQLModel
 from app.core.config import settings # noqa
 

@@ -22,10 +22,12 @@ class Course(BaseModel):
     credits: int
     grade: str
 
+
 class HighSchool(BaseModel):
     name: str
     graduation_year: int
     gpa: float
+
 
 class University(BaseModel):
     name: str
