@@ -1,4 +1,5 @@
 from datetime import datetime
+import uuid
 from sqlmodel import Field
 from typing import Optional, List
 from .entity import EntityBase
@@ -6,9 +7,7 @@ from pydantic import EmailStr, Json, BaseModel
 
 
 class Student(EntityBase, table=True):
-    firstname: str
-    lastname: str
-    email: str = EmailStr
+    user_id: uuid.UUID = Field(foreign_key="user.id")
     phone: str
     address: str
     dob: Optional[datetime] = Field(default_factory=datetime.utcnow)

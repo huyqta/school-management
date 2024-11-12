@@ -1,242 +1,86 @@
 [
     {
-        "question": "Build kitchen cabinets",
+        "question": {
+            "EN": "Build kitchen cabinets",
+            "VN": "Xây dựng tủ bếp"
+        },
         "group": "Realistic"
     },
     {
-        "question": "Lay brick or tile",
+        "question": {
+            "EN": "Lay brick or tile",
+            "VN": "Lát gạch hoặc ngói"
+        },
         "group": "Realistic"
     },
     {
-        "question": "Develop a new medicine",
+        "question": {
+            "EN": "Develop a new medicine",
+            "VN": "Phát triển một loại thuốc mới"
+        },
         "group": "Investigative"
     },
     {
-        "question": "Study ways to reduce water pollution",
+        "question": {
+            "EN": "Study ways to reduce water pollution",
+            "VN": "Nghiên cứu cách giảm thiểu ô nhiễm nước"
+        },
         "group": "Investigative"
     },
     {
-        "question": "Write books or plays",
+        "question": {
+            "EN": "Write books or plays",
+            "VN": "Viết sách hoặc kịch bản"
+        },
         "group": "Artistic"
     },
     {
-        "question": "Play a musical instrument",
+        "question": {
+            "EN": "Play a musical instrument",
+            "VN": "Chơi một nhạc cụ"
+        },
         "group": "Artistic"
     },
     {
-        "question": "Teach an individual an exercise routine",
+        "question": {
+            "EN": "Teach an individual an exercise routine",
+            "VN": "Dạy cho một cá nhân bài tập thể dục"
+        },
         "group": "Social"
     },
     {
-        "question": "Help people with personal or emotional problems",
+        "question": {
+            "EN": "Help people with personal or emotional problems",
+            "VN": "Giúp đỡ mọi người với các vấn đề cá nhân hoặc cảm xúc"
+        },
         "group": "Social"
     },
     {
-        "question": "Buy and sell stocks and bonds",
+        "question": {
+            "EN": "Buy and sell stocks and bonds",
+            "VN": "Mua và bán cổ phiếu và trái phiếu"
+        },
         "group": "Enterprising"
     },
     {
-        "question": "Manage a retail store",
+        "question": {
+            "EN": "Manage a retail store",
+            "VN": "Quản lý một cửa hàng bán lẻ"
+        },
         "group": "Enterprising"
     },
     {
-        "question": "Develop a spreadsheet using computer software",
+        "question": {
+            "EN": "Develop a spreadsheet using computer software",
+            "VN": "Phát triển bảng tính bằng phần mềm máy tính"
+        },
         "group": "Conventional"
     },
     {
-        "question": "Proofread records or forms",
-        "group": "Conventional"
-    },
-    {
-        "question": "Repair household appliances",
-        "group": "Realistic"
-    },
-    {
-        "question": "Raise fish in a fish hatchery",
-        "group": "Realistic"
-    },
-    {
-        "question": "Conduct chemical experiments",
-        "group": "Investigative"
-    },
-    {
-        "question": "Study the movement of planets",
-        "group": "Investigative"
-    },
-    {
-        "question": "Compose or arrange music",
-        "group": "Artistic"
-    },
-    {
-        "question": "Draw pictures",
-        "group": "Artistic"
-    },
-    {
-        "question": "Give career guidance to people",
-        "group": "Social"
-    },
-    {
-        "question": "Perform rehabilitation therapy",
-        "group": "Social"
-    },
-    {
-        "question": "Operate a beauty salon or barber shop",
-        "group": "Enterprising"
-    },
-    {
-        "question": "Manage a department within a large company",
-        "group": "Enterprising"
-    },
-    {
-        "question": "Install software across computers on a large network",
-        "group": "Conventional"
-    },
-    {
-        "question": "Operate a calculator",
-        "group": "Conventional"
-    },
-    {
-        "question": "Assemble electronic parts",
-        "group": "Realistic"
-    },
-    {
-        "question": "Drive a truck to deliver packages to offices and homes",
-        "group": "Realistic"
-    },
-    {
-        "question": "Examine blood samples using a microscope",
-        "group": "Investigative"
-    },
-    {
-        "question": "Investigate the cause of a fire",
-        "group": "Investigative"
-    },
-    {
-        "question": "Create special effects for movies",
-        "group": "Artistic"
-    },
-    {
-        "question": "Paint sets for plays",
-        "group": "Artistic"
-    },
-    {
-        "question": "Do volunteer work at a non-profit organization",
-        "group": "Social"
-    },
-    {
-        "question": "Teach children how to play sports",
-        "group": "Social"
-    },
-    {
-        "question": "Start your own business",
-        "group": "Enterprising"
-    },
-    {
-        "question": "Negotiate business contracts",
-        "group": "Enterprising"
-    },
-    {
-        "question": "Keep shipping and receiving records",
-        "group": "Conventional"
-    },
-    {
-        "question": "Calculate the wages of employees",
-        "group": "Conventional"
-    },
-    {
-        "question": "Test the quality of parts before shipment",
-        "group": "Realistic"
-    },
-    {
-        "question": "Repair and install locks",
-        "group": "Realistic"
-    },
-    {
-        "question": "Develop a way to better predict the weather",
-        "group": "Investigative"
-    },
-    {
-        "question": "Work in a biology lab",
-        "group": "Investigative"
-    },
-    {
-        "question": "Write scripts for movies or television shows",
-        "group": "Artistic"
-    },
-    {
-        "question": "Perform jazz or tap dance",
-        "group": "Artistic"
-    },
-    {
-        "question": "Teach sign language to people who are deaf or hard of hearing",
-        "group": "Social"
-    },
-    {
-        "question": "Help conduct a group therapy session",
-        "group": "Social"
-    },
-    {
-        "question": "Represent a client in a lawsuit",
-        "group": "Enterprising"
-    },
-    {
-        "question": "Market a new line of clothing",
-        "group": "Enterprising"
-    },
-    {
-        "question": "Inventory supplies using a hand-held computer",
-        "group": "Conventional"
-    },
-    {
-        "question": "Record rent payments",
-        "group": "Conventional"
-    },
-    {
-        "question": "Set up and operate machines to make products",
-        "group": "Realistic"
-    },
-    {
-        "question": "Put out forest fires",
-        "group": "Realistic"
-    },
-    {
-        "question": "Invent a replacement for sugar",
-        "group": "Investigative"
-    },
-    {
-        "question": "Do laboratory tests to identify diseases",
-        "group": "Investigative"
-    },
-    {
-        "question": "Sing in a band",
-        "group": "Artistic"
-    },
-    {
-        "question": "Edit movies",
-        "group": "Artistic"
-    },
-    {
-        "question": "Take care of children at a day-care center",
-        "group": "Social"
-    },
-    {
-        "question": "Teach a high-school class",
-        "group": "Social"
-    },
-    {
-        "question": "Sell merchandise at a department store",
-        "group": "Enterprising"
-    },
-    {
-        "question": "Manage a clothing store",
-        "group": "Enterprising"
-    },
-    {
-        "question": "Keep inventory records",
-        "group": "Conventional"
-    },
-    {
-        "question": "Stamp, sort, and distribute mail for an organization",
+        "question": {
+            "EN": "Proofread records or forms",
+            "VN": "Đọc soát hồ sơ hoặc biểu mẫu"
+        },
         "group": "Conventional"
     }
 ]

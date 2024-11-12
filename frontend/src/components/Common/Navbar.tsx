@@ -29,6 +29,7 @@ const Navbar = ({ type, addModalAs }: NavbarProps) => {
           onClick={addModal.onOpen}
         >
           <Icon as={FaPlus} /> Add {type}
+          <h1>123123123</h1>
         </Button>
         <AddModal isOpen={addModal.isOpen} onClose={addModal.onClose} />
       </Flex>
