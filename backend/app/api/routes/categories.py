@@ -8,9 +8,7 @@ from app.schemas.category import CategoryCreate, CategoryUpdate, CategoryRespons
 from app.cruds import category as crud_category
 from app.api import deps  # Đảm bảo bạn có phụ thuộc đúng
 
-router = APIRouter(
-    dependencies=[Depends(CurrentUser)]
-)
+router = APIRouter()
 
 @router.get("/", response_model=List[CategoryResponse])
 def read_categories(skip: int = 0, limit: int = 10, db: Session = Depends(deps.get_db)):

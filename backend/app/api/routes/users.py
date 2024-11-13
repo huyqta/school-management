@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import col, delete, func, select
 
 from app import crud
+from app.cruds import student as crud_student
 from app.api.deps import (
     CurrentUser,
     SessionDep,
@@ -24,6 +25,11 @@ from app.models import (
     UserUpdate,
     UserUpdateMe,
 )
+
+from app.schemas.student import (
+    StudentCreate
+)
+
 from app.utils import generate_new_account_email, send_email
 
 router = APIRouter()
@@ -55,6 +61,7 @@ def create_user(*, session: SessionDep, user_in: UserCreate) -> Any:
     """
     Create new user.
     """
+    print("Một lỗi khác đã xảy ra.")
     user = crud.get_user_by_email(session=session, email=user_in.email)
     if user:
         raise HTTPException(
@@ -154,6 +161,10 @@ def register_user(session: SessionDep, user_in: UserRegister) -> Any:
         )
     user_create = UserCreate.model_validate(user_in)
     user = crud.create_user(session=session, user_create=user_create)
+
+    student_create = StudentCreate(user_id = user.id)
+    print("student_create.user_id: " + str(student_create.user_id))
+    student = crud_student.create_student(session=session, student=student_create)
     return user
 
 

@@ -75,14 +75,14 @@ services:
           ignore:
             - ./backend/.venv
             - .venv
-            - ./backend/app/alembic
-            - /app/app/alembic
+            # - ./backend/app/alembic
+            # - /app/app/alembic
         - path: ./backend/pyproject.toml
           action: rebuild
     # TODO: remove once coverage is done locally
     volumes:
       - ./backend/htmlcov:/app/htmlcov
-      - ./backend/app/alembic:/app/app/alembic
+      # - ./backend/app/alembic:/app/app/alembic
     environment:
       SMTP_HOST: "mailcatcher"
       SMTP_PORT: "1025"

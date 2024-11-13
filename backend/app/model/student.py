@@ -1,18 +1,18 @@
 from datetime import datetime
 import uuid
 from sqlmodel import Field
-from typing import Optional, List
+from typing import Any, Dict, Optional, List
 from .entity import EntityBase
-from pydantic import EmailStr, Json, BaseModel
+from pydantic import Json, BaseModel
 
 
 class Student(EntityBase, table=True):
     user_id: uuid.UUID = Field(foreign_key="user.id")
-    phone: str
-    address: str
+    phone: Optional[str]
+    address: Optional[str]
     dob: Optional[datetime] = Field(default_factory=datetime.utcnow)
     description: Optional[str] = Field(default=None, max_length=255)
-    json_data: str = Json
+    json_data: Optional[str] = None
 
 
 class Course(BaseModel):
