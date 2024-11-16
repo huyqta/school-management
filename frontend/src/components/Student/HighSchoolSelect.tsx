@@ -48,7 +48,7 @@ import {
         name="gpa"
                 placeholder="Enter GPA"
       />
-            <Button onClick={handleAddSchool}>Add high school</Button>
+            {/* <Button onClick={handleAddSchool}>Add high school</Button> */}
       </>
     );
   };

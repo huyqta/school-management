@@ -24,7 +24,6 @@ class Course(BaseModel):
 
 class HighSchool(BaseModel):
     name: str
-    graduation_year: int
     gpa: float
 
 
@@ -32,7 +31,6 @@ class University(BaseModel):
     name: str
     major: str
     degree: str
-    graduation_year: int
     gpa: float
     courses: List[Course]
 
@@ -59,3 +57,15 @@ class StudentProfile(BaseModel):
     skills: List[str]
     extracurricular_activities: List[ExtracurricularActivity]
     certifications: List[Certification]
+
+
+class Program(BaseModel):
+    name: str
+    abbreviation: str
+    duration: Optional[str] = None
+    description: Optional[str] = None
+
+
+class EducationLevel(BaseModel):
+    level: str
+    programs: List[Program]

@@ -1,12 +1,10 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
+from typing import List, Optional
 import uuid
 
-from app.api.deps import CurrentUser
 from app.schemas.student import StudentCreate, StudentUpdate, StudentResponse
 from app.cruds import student as crud_student
-from app.api import deps  # Đảm bảo bạn có phụ thuộc đúng
 from app.api.deps import (
     CurrentUser,
     SessionDep,
@@ -17,27 +15,30 @@ router = APIRouter(
 )
 
 @router.get("/", response_model=List[StudentResponse])
-def read_students(skip: int = 0, limit: int = 10, db: Session = Depends(deps.get_db)):
-    students = crud_student.get_students(db, skip=skip, limit=limit)
+def read_students(session: SessionDep, skip: int = 0, limit: int = 10):
+    students = crud_student.get_students(session, skip=skip, limit=limit)
     return students
 
-@router.get("/{student_id}", response_model=StudentResponse)
-def read_student(student_id: uuid.UUID, db: Session = Depends(deps.get_db)):
-    student = crud_student.get_student(db, student_id)
+
+@router.get("/me", response_model=StudentResponse)
+def read_my_student(
+    session: SessionDep,
+    current_user: CurrentUser
+):
+    print(current_user.id)
+    student = crud_student.get_student_by_user_id(session, current_user.id)
     if not student:
         raise HTTPException(status_code=404, detail="Student not found")
     return student
 
-# @router.get("/me", response_model=StudentResponse)
-# def read_my_student(
-#     *,
-#     ession: SessionDep, 
-#     current_user: CurrentUser
-# ):
-#     student = crud_student.get_student_by_user_id(ession, current_user.id)
-#     if not student:
-#         raise HTTPException(status_code=404, detail="Student not found")
-#     return student
+
+@router.get("/{student_id}", response_model=StudentResponse)
+def read_student(student_id: uuid.UUID, session: SessionDep):
+    student = crud_student.get_student(session, student_id)
+    if not student:
+        raise HTTPException(status_code=404, detail="Student not found")
+    return student
+
 
 @router.post("/", response_model=StudentResponse)
 def create_student(student_in: StudentCreate, session: SessionDep):
@@ -45,7 +46,13 @@ def create_student(student_in: StudentCreate, session: SessionDep):
     return student
 
 @router.put("/{student_id}", response_model=StudentResponse)
-def update_student(student_id: uuid.UUID, student_in: StudentUpdate, session: SessionDep):
+def update_student(
+    student_id: uuid.UUID, 
+    student_in: StudentUpdate, 
+    session: SessionDep
+):
+    print(student_id)
+    print(student_in.json_data)
     db_student = crud_student.get_student(session, student_id)
     if not db_student:
         raise HTTPException(status_code=404, detail="Student not found")
