@@ -26,10 +26,17 @@ import { useEffect, useState } from "react";
 import { StudentResponse, StudentsService } from "../../client";
 import React from "react";
 
+type Certification = {
+  name: string;
+  institution: string;
+  year_issued: string;
+  grade: string;
+};
+
 const Certifications = ({ studentData }: { studentData: StudentResponse }) => {
-  const [certifications, setCertifications] = useState([]);
+  const [certifications, setCertifications] = useState<Certification[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentCertification, setCurrentCertification] = useState({
+  const [currentCertification, setCurrentCertification] = useState<Certification>({
     name: "",
     institution: "",
     year_issued: "",
@@ -62,7 +69,7 @@ const Certifications = ({ studentData }: { studentData: StudentResponse }) => {
     const updatedData = {
       ...studentData,
       json_data: JSON.stringify({
-        ...JSON.parse(studentData.json_data),
+        ...JSON.parse(studentData.json_data ?? '{}'),
         certifications: updatedCertifications,
       }),
     };
@@ -79,7 +86,7 @@ const Certifications = ({ studentData }: { studentData: StudentResponse }) => {
       });
     },
     onSuccess: (variables) => {
-      setCertifications(JSON.parse(variables.json_data).certifications);
+      setCertifications(JSON.parse(variables.json_data ?? '{}').certifications);
       console.log("Certifications updated successfully");
     },
     onError: (error) => {
@@ -93,7 +100,7 @@ const Certifications = ({ studentData }: { studentData: StudentResponse }) => {
     const updatedData = {
       ...studentData,
       json_data: JSON.stringify({
-        ...JSON.parse(studentData.json_data),
+        ...JSON.parse(studentData.json_data ?? '{}'),
         certifications: updatedCertifications,
       }),
     };

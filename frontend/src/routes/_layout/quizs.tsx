@@ -39,7 +39,7 @@ function Quizs() {
     const fetchQuestions = async () => {
       const response = await fetch('/assets/data/riasec_questions.json');
       const data = await response.json();
-      console.log(data)
+      // console.log(data)
       setQuestions(data);
     };
     fetchQuestions();
