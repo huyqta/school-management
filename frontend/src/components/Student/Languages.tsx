@@ -30,10 +30,15 @@ import { useEffect, useState } from "react";
 import { StudentResponse, StudentsService } from "../../client";
 import React from "react";
 
+type Language = {
+  language: "",
+  level: "beginner" | "elementary" | "intermediate" | "advanced" | "proficient",
+}
+
 const Languages = ({ studentData }: { studentData: StudentResponse }) => {
-  const [languages, setLanguages] = useState([]);
+  const [languages, setLanguages] = useState<Language[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState({
+  const [currentLanguage, setCurrentLanguage] = useState<Language>({
     language: "",
     level: "beginner",
   });
@@ -54,7 +59,7 @@ const Languages = ({ studentData }: { studentData: StudentResponse }) => {
   };
 
   const handleLevelChange = (value: number) => {
-    setCurrentLanguage((prev) => ({ ...prev, level: levels[value] }));
+    setCurrentLanguage((prev) => ({ ...prev, level: levels[value] as Language['level']}));
   };
 
   const handleSaveLanguage = () => {
@@ -68,7 +73,7 @@ const Languages = ({ studentData }: { studentData: StudentResponse }) => {
     const updatedData = {
       ...studentData,
       json_data: JSON.stringify({
-        ...JSON.parse(studentData.json_data),
+        ...JSON.parse(studentData.json_data ?? "{}"),
         languages: updatedLanguages,
       }),
     };
@@ -85,7 +90,7 @@ const Languages = ({ studentData }: { studentData: StudentResponse }) => {
       });
     },
     onSuccess: (variables) => {
-      setLanguages(JSON.parse(variables.json_data).languages);
+      setLanguages(JSON.parse(variables.json_data ?? "{}").languages);
       console.log("Languages updated successfully");
     },
     onError: (error) => {
@@ -99,7 +104,7 @@ const Languages = ({ studentData }: { studentData: StudentResponse }) => {
     const updatedData = {
       ...studentData,
       json_data: JSON.stringify({
-        ...JSON.parse(studentData.json_data),
+        ...JSON.parse(studentData.json_data ?? "{}"),
         languages: updatedLanguages,
       }),
     };

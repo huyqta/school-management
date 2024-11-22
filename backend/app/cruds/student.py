@@ -9,6 +9,7 @@ def get_student(session: Session, student_id: uuid.UUID):
 
 
 def get_student_by_user_id(session: Session, user_id: uuid.UUID):
+    print(user_id)
     return session.query(Student).filter(Student.user_id == user_id).first()
 
 

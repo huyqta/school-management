@@ -12,7 +12,6 @@ import {
   ModalBody,
   ModalFooter,
   VStack,
-  HStack,
   Text,
   Flex,
   IconButton,
@@ -54,7 +53,7 @@ const Skills = ({ studentData }: { studentData: StudentResponse }) => {
     const updatedData = {
       ...studentData,
       json_data: JSON.stringify({
-        ...JSON.parse(studentData.json_data),
+        ...JSON.parse(studentData.json_data || "{}"),
         skills: updatedSkills,
       }),
     };
@@ -71,7 +70,7 @@ const Skills = ({ studentData }: { studentData: StudentResponse }) => {
       });
     },
     onSuccess: (variables) => {
-        setSkillInput(JSON.parse(variables.json_data).skills.join("\n"));
+        setSkillInput(JSON.parse(variables.json_data || "{}").skills.join("\n"));
         console.log("Skills updated successfully");
     },
     onError: (error) => {
@@ -86,7 +85,7 @@ const Skills = ({ studentData }: { studentData: StudentResponse }) => {
     const updatedData = {
       ...studentData,
       json_data: JSON.stringify({
-        ...JSON.parse(studentData.json_data),
+        ...JSON.parse(studentData.json_data || "{}"),
         skills: updatedSkills,
       }),
     };

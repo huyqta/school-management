@@ -13,7 +13,14 @@ OpenAPI.TOKEN = async () => {
   return localStorage.getItem("access_token") || ""
 }
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  // defaultOptions: {
+  //   queries: {
+  //     gcTime: 0, // Xóa cache ngay sau khi không sử dụng
+  //     staleTime: 0, // Luôn làm mới dữ liệu
+  //   },
+  // },
+})
 
 const router = createRouter({ routeTree })
 declare module "@tanstack/react-router" {
