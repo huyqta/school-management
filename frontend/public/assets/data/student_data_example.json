@@ -48,26 +48,39 @@
     ],
     "certifications": [
         {
-            "certification_name": "Google Data Analytics Certificate",
+            "name": "Google Data Analytics Certificate",
             "institution": "Google",
-            "year_issued": 2021
+            "year_issued": 2021,
+            "grade": "Master"
         },
         {
-            "certification_name": "AWS Certified Solutions Architect",
+            "name": "AWS Certified Solutions Architect",
             "institution": "Amazon Web Services",
-            "year_issued": 2022
+            "year_issued": 2022,
+            "grade": "Professional"
+        }
+    ],
+    "quizs": [
+        {
+            "riasec": 
+                {
+                    "Realistic": 0,
+                    "Investigative": 0,
+                    "Artistic": 9,
+                    "Social": 0,
+                    "Enterprising": 0,
+                    "Conventional": 9
+                }
         }
     ],
     "languages": [
         {
-            "language": "English",
-            "license": "IELTS",
-            "score": 9
+            "language":"English",
+            "level":"basic"
         },
         {
-            "language": "Japan",
-            "license": "N1",
-            "score": 145
+            "language":"Japanese",
+            "level":""
         }
     ]
 }
