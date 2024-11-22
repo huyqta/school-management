@@ -1,15 +1,16 @@
-import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import {
-  Button,
   Container,
-  FormLabel,
   Flex,
-  Input,
   Box,
+  TabPanel,
+  TabPanels,
+  Tab,
+  TabList,
+  Tabs,
 } from "@chakra-ui/react";
-import HighSchoolSelect from "../../components/Student/HighSchoolSelect";
-import Skills from "../../components/Student/Skills";
+// import Certifications from "../../components/Student/Certifications";
+// import Skills from "../../components/Student/Skills";
 import { StudentsService } from "../../client";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -29,25 +30,25 @@ export const Route = createFileRoute("/_layout/student")({
 })
 
 function Student() {
-  const [updatedData, setUpdatedData] = useState<StudentUpdate>(null)
+  // const [updatedData, setUpdatedData] = useState<StudentUpdate>(null)
   const { data: studentData, isLoading, error } = useQuery(getStudentQueryOptions());
 
-  const mutation = useMutation({
-    mutationFn: async (updatedData) => {
-      console.log(updatedData)
-      // Thay thế StudentsService.updateStudentData với API chính xác của bạn
-      return await StudentsService.studentsUpdateStudent({ requestBody: updatedData, studentId: updatedData.id });
-    },
-    onSuccess: () => {
-      // Invalidate queries hoặc bất kỳ thao tác nào bạn cần khi mutation thành công
-      // QueryClient.invalidateQueries(["studentData"]);
-    },
-    onError: (error) => {
-      console.error("Error updating student data:", error);
-      // Thêm xử lý lỗi nếu cần
-    },
-  });
-  
+  console.log(studentData)
+  // const mutation = useMutation({
+  //   mutationFn: async (updatedData) => {
+  //     // Thay thế StudentsService.updateStudentData với API chính xác của bạn
+  //     return await StudentsService.studentsUpdateStudent({ requestBody: updatedData, studentId: updatedData.id });
+  //   },
+  //   onSuccess: () => {
+  //     // Invalidate queries hoặc bất kỳ thao tác nào bạn cần khi mutation thành công
+  //     // QueryClient.invalidateQueries(["studentData"]);
+  //   },
+  //   onError: (error) => {
+  //     console.error("Error updating student data:", error);
+  //     // Thêm xử lý lỗi nếu cần
+  //   },
+  // });
+
   // const mutation = useMutation(
   //   (updatedData) => StudentsService.updateStudentData({ requestBody: updatedData }),
   //   {
@@ -61,56 +62,93 @@ function Student() {
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error fetching student data: {error.message}</p>;
 
-  const handleUpdateSkills = (newSkills) => {
-    if (studentData){
-      // Parse json_data để lấy đối tượng bên trong
-      const parsedJsonData = JSON.parse(studentData.json_data || "{}");
+  // const handleUpdateSkills = (newSkills) => {
+  //   if (studentData) {
+  //     // Parse json_data để lấy đối tượng bên trong
+  //     const parsedJsonData = JSON.parse(studentData.json_data || "{}");
 
-      // Cập nhật skills trong json_data
-      parsedJsonData.skills = newSkills;
-      const newData = {
-        ...studentData,
-        json_data: JSON.stringify(parsedJsonData),
-      };
-      console.log("updatedData")
-      console.log(newData)
-      console.log("studentData")
-      console.log(studentData.json_data)
-      console.log("newSkills")
-      console.log(newSkills)
-      // setUpdatedData(newData);
-    }
-  };
+  //     // Cập nhật skills trong json_data
+  //     parsedJsonData.skills = newSkills;
+  //     const newData = {
+  //       ...studentData,
+  //       json_data: JSON.stringify(parsedJsonData),
+  //     };
+  //     // setUpdatedData(newData);
+  //   }
+  // };
 
   // const handleUpdateStudentData = () => {
   //   mutation.mutate(studentData);
   // }
 
   return (
-    
-    <Container maxW="5xl" mt={10}>
-      <h1>Student</h1>
-      <Flex wrap="wrap" gap="4">
-        <Box flex="1" width={{base: "100%", sm: "100%", md: "50%"}}>
-          <HighSchoolSelect/>
+
+    <Container maxW="7xl" mt={10}>
+      <Box maxW="7xl" mx="auto" mt={10} px={4}>
+      {/* Tabs */}
+      <Tabs variant="line" align="center">
+        <TabList>
+          <Tab>Info</Tab>
+          <Tab>Data</Tab>
+          <Tab>Personal</Tab>
+          <Tab>Education</Tab>
+        </TabList>
+        <TabPanels>
+          {/* Info Tab */}
+          <TabPanel>
+            <p>Info Content</p>
+          </TabPanel>
+
+          {/* Data Tab */}
+          <TabPanel>
+            <p>Data Content</p>
+          </TabPanel>
+
+          {/* Personal Tab */}
+          <TabPanel>
+            <p>Personal Content</p>
+          </TabPanel>
+
+          {/* Education Tab */}
+          <TabPanel>
+            <Flex wrap="wrap" gap="4">
+              {/* <Box flex="1" width={{ base: "100%", sm: "100%", md: "50%" }}>
+                <Certifications studentData={studentData} />
+              </Box>
+              <Box flex="1" width={{ base: "100%", sm: "100%", md: "50%" }}>
+                <Skills studentData={studentData} />
+              </Box>
+            </Flex>
+            <Flex gap="4" mt={4}>
+              <Box>
+                <FormLabel htmlFor="languages">Languages</FormLabel>
+                <Input id="languages" name="languages" placeholder="Enter language" />
+              </Box> */}
+            </Flex>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Box>
+      {/* <h1>Student</h1> */}
+      {/* <Flex wrap="wrap" gap="4">
+        <Box flex="1" width={{ base: "100%", sm: "100%", md: "50%" }}>
+          <Certifications studentData={studentData} />
         </Box>
-        <Box flex="1" width={{base: "100%", sm: "100%", md: "50%"}}>
-          <Skills skills={JSON.parse(studentData?.json_data).skills} onUpdateSkills={handleUpdateSkills} />
+        <Box flex="1" width={{ base: "100%", sm: "100%", md: "50%" }}>
+          <Skills studentData={studentData} />
         </Box>
       </Flex>
       <Flex gap="4">
         <Box>
-        <FormLabel htmlFor="languages">Languages</FormLabel>
-      <Input
-        id="languages"
-        name="languages"
-        placeholder="Enter language"
-        // onChange={handleInputChange}
-      />
-          
+          <FormLabel htmlFor="languages">Languages</FormLabel>
+          <Input
+            id="languages"
+            name="languages"
+            placeholder="Enter language"
+          />
         </Box>
-      </Flex>
-      <Button onClick={() => mutation.mutate(updatedData)}>Update</Button>
+      </Flex> */}
+      {/* <Button onClick={() => mutation.mutate(updatedData)}>Update</Button> */}
       {/* Add more fields as necessary */}
     </Container>
   );
