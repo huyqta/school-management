@@ -147,7 +147,7 @@ const Certifications = ({ studentData }: { studentData: StudentResponse }) => {
                 borderBottom="1px solid"
                 borderColor="gray.100"
               >
-                <Text>
+                <Text align={"left"}>
                   {cert.name} - {cert.institution} ({cert.year_issued}, {cert.grade})
                 </Text>
                 <HStack spacing={2}>

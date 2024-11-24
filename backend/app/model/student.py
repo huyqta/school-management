@@ -47,16 +47,22 @@ class ExtracurricularActivity(BaseModel):
 
 
 class Certification(BaseModel):
-    certification_name: str
+    name: str
     institution: str
     year_issued: int
+    grade: str
+
+
+class Language(BaseModel):
+    language: str
+    level: str
 
 
 class StudentProfile(BaseModel):
-    education: Education
-    skills: List[str]
-    extracurricular_activities: List[ExtracurricularActivity]
-    certifications: List[Certification]
+    skills: List[str] = []
+    languages: List[Language] = []
+    extracurricular_activities: List[ExtracurricularActivity] = []
+    certifications: List[Certification] = []
 
 
 class Program(BaseModel):

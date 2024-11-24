@@ -6,7 +6,8 @@ COPY package*.json /app/
 
 RUN npm install
 
-RUN npx -y playwright install --with-deps
+RUN npx -y playwright install
+# RUN npx -y playwright install --with-deps
 
 COPY ./ /app/
 
